@@ -2,7 +2,6 @@ package com.pmm.wonderlast
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -21,8 +20,10 @@ class MainActivity : AppCompatActivity() {
         if (auth.currentUser != null) {
             // Jika sudah login, arahkan ke halaman utama
             startActivity(Intent(this, HomeActivity::class.java))
+            finish()
         }else{
             startActivity(Intent(this,WelcomeActivity::class.java))
+            finish()
         }
     }
 

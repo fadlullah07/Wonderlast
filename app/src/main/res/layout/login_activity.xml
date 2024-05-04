@@ -27,7 +27,8 @@
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="1dp"
             android:layout_toStartOf="@+id/sign_up"
-            app:srcCompat="@drawable/login_icon" />
+            app:srcCompat="@drawable/login_icon"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/sign_up"
@@ -46,6 +47,7 @@
     </RelativeLayout>
 
     <ImageView
+        tools:ignore="ContentDescription"
         android:id="@+id/travel_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -197,7 +199,7 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/forgot_your"
+            android:id="@+id/reset_password"
             android:layout_width="217dp"
             android:layout_height="20dp"
             android:layout_alignParentStart="true"

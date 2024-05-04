@@ -22,7 +22,6 @@ class WelcomeActivity :AppCompatActivity() {
         signupbtn = findViewById(R.id.Sign_btn)
         signupbtn.setOnClickListener{
             val intent = Intent(this, SignupActivity::class.java)
-            startActivity(intent) // Memulai activity baru
             val options = ActivityOptionsCompat.makeCustomAnimation(
                 this,
                 R.anim.enter_animation,
@@ -32,7 +31,6 @@ class WelcomeActivity :AppCompatActivity() {
         }
         loginbtn.setOnClickListener{
             val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent) // Memulai activity baru
             val options = ActivityOptionsCompat.makeCustomAnimation(
                 this,
                 R.anim.enter_animation,

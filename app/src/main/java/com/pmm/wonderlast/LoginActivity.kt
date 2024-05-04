@@ -9,8 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.RelativeLayout
+import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityOptionsCompat
@@ -34,7 +34,7 @@ class LoginActivity :AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private val RC_SIGN_IN = 2
     private lateinit var btnGoogleLogin : RelativeLayout
-
+    private lateinit var resetpasslink : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_activity)
@@ -109,7 +109,6 @@ class LoginActivity :AppCompatActivity() {
 
         signupbtn.setOnClickListener{
             val intent = Intent(this, SignupActivity::class.java)
-            startActivity(intent) // Memulai activity baru
             val options = ActivityOptionsCompat.makeCustomAnimation(
                 this,
                 R.anim.enter_animation_reverse,
@@ -118,6 +117,16 @@ class LoginActivity :AppCompatActivity() {
             ActivityCompat.startActivity(this, intent, options.toBundle())
         }
 
+        resetpasslink = findViewById(R.id.reset_password)
+        resetpasslink.setOnClickListener{
+            val intent = Intent(this, ResetPassActivity::class.java)
+            val options = ActivityOptionsCompat.makeCustomAnimation(
+                this,
+                R.anim.enter_animation,
+                R.anim.exit_animation
+            )
+            ActivityCompat.startActivity(this, intent, options.toBundle())
+        }
     }
     private fun signInWithGoogle() {
         val signInIntent = googleSignInClient.signInIntent
@@ -153,6 +162,7 @@ class LoginActivity :AppCompatActivity() {
                     val user = auth.currentUser
                     Toast.makeText(this, "Welcome, ${user?.displayName}", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, HomeActivity::class.java))
+                    finish()
                 } else {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(this, "Authentication failed", Toast.LENGTH_SHORT).show()

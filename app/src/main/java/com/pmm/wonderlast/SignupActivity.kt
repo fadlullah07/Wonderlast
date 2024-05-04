@@ -6,7 +6,6 @@ package com.pmm.wonderlast
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RelativeLayout
@@ -42,7 +41,6 @@ class SignupActivity :AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
         setContentView(R.layout.signup_activity)
 
@@ -84,14 +82,12 @@ class SignupActivity :AppCompatActivity() {
 
         loginbtn.setOnClickListener{
             val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent) // Memulai activity baru
             val options = ActivityOptionsCompat.makeCustomAnimation(
                 this,
                 R.anim.enter_animation,
                 R.anim.exit_animation
             )
             ActivityCompat.startActivity(this, intent, options.toBundle())
-            finish()
         }
 
     }
@@ -128,7 +124,7 @@ class SignupActivity :AppCompatActivity() {
                 // Sign in success, update UI with the signed-in user's information
                 val user = auth.currentUser
                 Toast.makeText(this, "Welcome, ${user?.displayName}", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, HomeActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
             } else {
                 // If sign in fails, display a message to the user.
                 Toast.makeText(this, "Authentication failed", Toast.LENGTH_SHORT).show()

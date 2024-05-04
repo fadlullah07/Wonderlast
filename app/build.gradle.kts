@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.pmm.wonderlast"
-        minSdk = 29
+        minSdk = 32
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -56,5 +56,6 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.android.gms:play-services-auth:21.1.0")
+    implementation("androidx.core:core-splashscreen:1.0.1")
     implementation(libs.firebase.auth.ktx)
 }
