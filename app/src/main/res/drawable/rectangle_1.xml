@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#33000000" /> <!-- Warna bayangan -->
+            <corners android:radius="8dp" /> <!-- Jika ingin sudut bulat -->
+        </shape>
+    </item>
+    <!-- Vektor -->
+    <item android:top="0dp">
+        <vector
+            android:width="183dp"
+            android:height="44dp"
+            android:viewportWidth="183"
+            android:viewportHeight="44"
+            >
+            <group>
+                <clip-path
+                    android:pathData="M12 1H171C177.075 1 182 5.92487 182 12V32C182 38.0751 177.075 43 171 43H12C5.92487 43 1 38.0751 1 32V12C1 5.92487 5.92487 1 12 1Z"
+                    />
+                <path
+                    android:pathData="M1 1V43H182V1"
+                    android:fillColor="#F5F5F5"
+                    />
+            </group>
+            <group>
+                <clip-path
+                    android:pathData="M0 0V44H183V0M12 1H171C177.075 1 182 5.92487 182 12V32C182 38.0751 177.075 43 171 43H12C5.92487 43 1 38.0751 1 32V12C1 5.92487 5.92487 1 12 1Z"
+                    />
+            </group>
+        </vector>
+    </item>
+</layer-list>

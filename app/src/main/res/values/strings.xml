@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Wonderlast</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="body_text">Cari Tempat Wisata Favorit</string>
+    <string name="email_address">
+    Email Address
+    </string>
+    <string name="enter_your_email">
+Enter Your Email
+</string>
+    <string name="enter_your_password">
+Enter Password
+</string>
+    <string name="password">
+    Password
+    </string>
+    <string name="password_forgot">
+Forgot your password?
+</string>
+    <string name="facebook_login">
+Login with Facebook
+</string>
+    <string name="google_login">
+Login with Google
+</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="re_enter_password">Re-enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="agreement">By Using this services, you are agree to our <b>Terms and Conditions</b> and have read our <b>Privacy Policy</b></string>
+        <string name="default_web_client_id" translatable="false">1039967530272-e10q4v68omhm5lqjrr2qq5jannkedpmr.apps.googleusercontent.com</string>
+
+
+</resources>

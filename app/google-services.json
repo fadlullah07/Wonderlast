@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1039967530272",
+    "project_id": "wonderlast-387da",
+    "storage_bucket": "wonderlast-387da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039967530272:android:d55573d9cf4f08a43efb45",
+        "android_client_info": {
+          "package_name": "com.pmm.wonderlast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039967530272-e10q4v68omhm5lqjrr2qq5jannkedpmr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaSkYuYsF7AYGW5m61s-WPTSwOEOKD-V4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039967530272-e10q4v68omhm5lqjrr2qq5jannkedpmr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
