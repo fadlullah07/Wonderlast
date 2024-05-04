@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
@@ -24,9 +23,7 @@ class HomeActivity :AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         val currentUser = auth.currentUser
-        tvUserEmail.text = "Welcome, ${currentUser?.email}"
-
-
+        tvUserEmail.text = "Welcome, ${currentUser?.displayName}"
         btnLogout.setOnClickListener {
             logout()
         }

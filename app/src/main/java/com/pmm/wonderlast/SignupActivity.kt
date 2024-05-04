@@ -6,10 +6,11 @@ package com.pmm.wonderlast
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.text.method.LinkMovementMethod
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RelativeLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -35,14 +36,11 @@ class SignupActivity :AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private val RC_SIGN_IN = 1
     private lateinit var btnGoogleSignIn : RelativeLayout
+    private lateinit var privacyandpolicy : TextView
 
     private lateinit var loginbtn : RelativeLayout
-    companion object{
-        private const val TAG = "Email Verification"
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
         setContentView(R.layout.signup_activity)
 
@@ -53,6 +51,8 @@ class SignupActivity :AppCompatActivity() {
         btnSignup = findViewById(R.id.signupbtn)
         btnGoogleSignIn = findViewById((R.id.google_btn))
 
+        privacyandpolicy = findViewById(R.id.privacypolicy)
+        privacyandpolicy.movementMethod = LinkMovementMethod.getInstance();
 
         btnSignup.setOnClickListener {
             val email = etEmail.text.toString()
@@ -68,6 +68,8 @@ class SignupActivity :AppCompatActivity() {
                 return@setOnClickListener
             }
             signUpUser(email,password)
+            etEmail.text.clear()
+            etPassword.text.clear()
         }
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -84,14 +86,12 @@ class SignupActivity :AppCompatActivity() {
 
         loginbtn.setOnClickListener{
             val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent) // Memulai activity baru
             val options = ActivityOptionsCompat.makeCustomAnimation(
                 this,
                 R.anim.enter_animation,
                 R.anim.exit_animation
             )
             ActivityCompat.startActivity(this, intent, options.toBundle())
-            finish()
         }
 
     }
@@ -128,7 +128,7 @@ class SignupActivity :AppCompatActivity() {
                 // Sign in success, update UI with the signed-in user's information
                 val user = auth.currentUser
                 Toast.makeText(this, "Welcome, ${user?.displayName}", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, HomeActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
             } else {
                 // If sign in fails, display a message to the user.
                 Toast.makeText(this, "Authentication failed", Toast.LENGTH_SHORT).show()
@@ -142,6 +142,8 @@ class SignupActivity :AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Registrasi berhasil, kirim email verifikasi
                     sendEmailVerification(task.result?.user)
+
+
                 } else {
                     // Registrasi gagal, tampilkan pesan kesalahan
                     Toast.makeText(this, "Gagal mendaftar: ${task.exception?.message}", Toast.LENGTH_SHORT).show()

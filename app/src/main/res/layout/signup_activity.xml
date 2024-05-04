@@ -8,7 +8,6 @@
     tools:context=".SignupActivity"
     >
 
-
     <RelativeLayout
         android:id="@+id/loginbtn"
         android:layout_width="90dp"
@@ -380,13 +379,14 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/by_using_th"
+        android:id="@+id/privacypolicy"
         android:layout_width="273dp"
         android:layout_height="54dp"
         android:layout_marginBottom="28dp"
         android:fontFamily="@font/calibri_regular"
         android:gravity="center_horizontal|top"
         android:text="@string/agreement"
+        android:clickable="true"
         android:textAppearance="@style/agreement"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

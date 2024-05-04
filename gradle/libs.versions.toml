@@ -3,16 +3,17 @@ agp = "8.3.2"
 constraintlayoutVersion = "2.2.0-alpha13"
 firebaseAuthKtx = "22.3.1"
 kotlin = "1.9.0"
-coreKtx = "1.10.1"
+coreKtx = "1.13.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
-material = "1.10.0"
-activity = "1.8.0"
+material = "1.11.0"
+activity = "1.9.0"
 constraintlayout = "2.1.4"
 identityCredential = "20231002"
 googleid = "1.1.0"
+firebaseDatabase = "20.3.1"
 
 [libraries]
 androidx-constraintlayout-v220alpha13 = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayoutVersion" }
@@ -27,6 +28,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 identity-credential = { group = "com.android.identity", name = "identity-credential", version.ref = "identityCredential" }
 googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "googleid" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version = "20.3.1" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
