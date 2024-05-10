@@ -28,11 +28,30 @@ Login with Google
     <string name="continue_with_facebook">Continue with Facebook</string>
     <string name="re_enter_password">Re-enter Password</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="agreement">By Using this services, you are agree to our<b>Terms and Conditions</b> and have read our <b><a href="https://wonderlast.web.app/PrivacyPolicy/">Privacy Policy</a></b></string>
-        <string name="default_web_client_id" translatable="false">1039967530272-e10q4v68omhm5lqjrr2qq5jannkedpmr.apps.googleusercontent.com</string>
+    <string name="agreement">By Using this services, you are agree to our <b>Terms and Conditions</b> and have read our <b><a href="https://wonderlast.web.app/PrivacyPolicy/">Privacy Policy</a></b></string>
+    <string name="default_web_client_id" translatable="false">1039967530272-e10q4v68omhm5lqjrr2qq5jannkedpmr.apps.googleusercontent.com</string>
     <string name="reset_password">Reset Password</string>
     <string name="confirmation_link_will_be_sent_to_corresponding_email_address">Reset password link will be sent to corresponding\n email address</string>
     <string name="send">Send</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="name">Name</string>
+    <string name="lengkapi_data">Lengkapi data</string>
+    <string name="phone_number">Phone number\n</string>
+    <string name="enter_your_phone_number">Input Your Phone Number</string>
+    <string name="otp">OTP</string>
+    <string name="enter_otp">Enter OTP\n</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="confirm">Confirm\n</string>
+    <string name="contrycode">+62</string>
+    <string name="profile">Profile\n</string>
+    <string name="personal_data">Personal Data</string>
+    <string name="booking_history">Booking History</string>
+    <string name="address">Address</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="settings">Settings</string>
+    <string name="tersimpan">Tersimpan(Konfimasi Pembayaran)</string>
+    <string name="log_out">Log out</string>
+    <string name="edit">Edit</string>
 
 
 </resources>

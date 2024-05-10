@@ -7,18 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/image1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <!-- item_slider.xml -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="290dp"
+        app:layout_constraintBottom_toTopOf="@id/wanderlust"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/image1" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerSlider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+
 
     <TextView
         android:id="@+id/wanderlust"
@@ -32,11 +37,9 @@
         android:fontFamily="@font/pasifico"
         android:gravity="start|center_vertical"
         android:shadowColor="#000000"
-        android:shadowDx="10"
         android:shadowDy="10"
-        android:shadowRadius="30"
         android:text="@string/app_name"
-        android:textColor="@color/white"
+        android:textColor="?android:textColor"
         android:textSize="45sp"
         app:layout_constraintBottom_toTopOf="@+id/body_text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,12 +56,9 @@
         android:layout_marginEnd="152dp"
         android:fontFamily="@font/calibri_bold"
         android:shadowColor="#000000"
-        android:shadowDx="10"
-        android:shadowDy="10"
-        android:shadowRadius="30"
         android:text="@string/body_text"
         android:textAlignment="textStart"
-        android:textColor="@color/white"
+        android:textColor="?android:textColor"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

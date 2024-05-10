@@ -38,8 +38,6 @@ class ResetPassActivity: Activity() {
             ActivityCompat.startActivity(this, intent , options.toBundle())
             finish()
         }
-
-
         sendbtn.setOnClickListener{
             val emailAddress = emailinput.text.toString()
             val user = auth.currentUser

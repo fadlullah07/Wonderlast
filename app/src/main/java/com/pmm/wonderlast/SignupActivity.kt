@@ -29,6 +29,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 @Suppress("DEPRECATION")
 class SignupActivity :AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+
     private lateinit var etEmail : EditText
     private lateinit var etPassword: EditText
     private lateinit var etConfirmPassword : EditText
@@ -55,11 +56,12 @@ class SignupActivity :AppCompatActivity() {
         privacyandpolicy.movementMethod = LinkMovementMethod.getInstance();
 
         btnSignup.setOnClickListener {
+
             val email = etEmail.text.toString()
             val password = etPassword.text.toString()
             val confirmPassword = etConfirmPassword.text.toString()
             // Validasi email dan password
-            if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() ) {
+            if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -68,8 +70,19 @@ class SignupActivity :AppCompatActivity() {
                 return@setOnClickListener
             }
             signUpUser(email,password)
-            etEmail.text.clear()
-            etPassword.text.clear()
+//            val username = etUsername.text.toString()
+//            val user = FirebaseAuth.getInstance().currentUser
+//            val profileUpdates = UserProfileChangeRequest.Builder()
+//                .setDisplayName(username)
+//                .build()
+//            user?.updateProfile(profileUpdates)
+//                ?.addOnCompleteListener { task ->
+//                    if (task.isSuccessful) {
+//                        Log.d("TAG","update nama berhasil")
+//                    } else {
+//                        // Gagal menyetel username
+//                    }
+//                }
         }
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -128,7 +141,8 @@ class SignupActivity :AppCompatActivity() {
                 // Sign in success, update UI with the signed-in user's information
                 val user = auth.currentUser
                 Toast.makeText(this, "Welcome, ${user?.displayName}", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, LoginActivity::class.java))
+                startActivity(Intent(this, PhoneActivity::class.java))
+                finish()
             } else {
                 // If sign in fails, display a message to the user.
                 Toast.makeText(this, "Authentication failed", Toast.LENGTH_SHORT).show()
@@ -142,8 +156,9 @@ class SignupActivity :AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Registrasi berhasil, kirim email verifikasi
                     sendEmailVerification(task.result?.user)
-
-
+                    etConfirmPassword.text.clear()
+                    etEmail.text.clear()
+                    etPassword.text.clear()
                 } else {
                     // Registrasi gagal, tampilkan pesan kesalahan
                     Toast.makeText(this, "Gagal mendaftar: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
@@ -156,9 +171,9 @@ class SignupActivity :AppCompatActivity() {
             if (task.isSuccessful) {
                 // Email verifikasi berhasil dikirim
                 Toast.makeText(this, "Email verifikasi telah dikirim", Toast.LENGTH_SHORT).show()
-
                 // Tidak ada tindakan khusus yang diperlukan di sini
                 // Data pengguna akan disimpan setelah email diverifikasi
+                startActivity(Intent(this, LoginActivity::class.java))
             } else {
                 // Gagal mengirim email verifikasi
                 Toast.makeText(this, "Gagal mengirim email verifikasi", Toast.LENGTH_SHORT).show()

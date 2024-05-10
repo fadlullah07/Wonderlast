@@ -12,10 +12,11 @@
         android:id="@+id/arrow_back"
         android:layout_width="35dp"
         android:layout_height="39dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="340dp"
+        android:layout_marginTop="32dp"
         android:src="@drawable/arrow_back_24"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
@@ -25,14 +26,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="308dp"
-        android:layout_marginEnd="52dp"
         android:fontFamily="@font/calibri_regular"
         android:text="@string/confirmation_link_will_be_sent_to_corresponding_email_address"
         android:textAlignment="center"
         android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404" />
 
     <TextView
         android:id="@+id/header_title"
@@ -41,14 +43,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="92dp"
         android:fontFamily="@font/pasifico"
         android:gravity="center|center_horizontal|top"
         android:text="@string/reset_password"
         android:textAppearance="@style/login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16" />
 
     <TextView
         android:id="@+id/email_address"
@@ -56,35 +59,38 @@
         android:layout_height="24.39dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="92dp"
+        android:layout_marginTop="224dp"
         android:fontFamily="@font/calibri_regular"
         android:gravity="center_vertical"
         android:lineHeight="23sp"
         android:text="@string/email_address"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="343dp"
-        android:layout_height="59dp"
+        android:layout_width="303dp"
+        android:layout_height="54dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="244dp"
         android:background="@drawable/mail_pass_bg"
         android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.341">
 
         <EditText
             android:id="@+id/input_email"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
             android:autofillHints="Enter Email"
             android:fontFamily="@font/calibri_regular"
             android:hint="@string/enter_your_email"
@@ -116,15 +122,16 @@
         android:id="@+id/sendbtn"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="124dp"
-        android:layout_marginBottom="392dp"
         android:background="@drawable/loginbtn"
         android:clickable="true"
         android:fontFamily="@font/calibri_bold"
         android:text="@string/send"
-        android:textAppearance="@style/loginbtn"
+        android:textAppearance="@style/btn"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

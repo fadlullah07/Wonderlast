@@ -64,7 +64,7 @@ class LoginActivity :AppCompatActivity() {
                                 // Login berhasil, arahkan ke halaman utama atau halaman selanjutnya
                                 Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT)
                                     .show()
-                                startActivity(Intent(this, HomeActivity::class.java))
+                                startActivity(Intent(this, MainActivity::class.java))
                                 finish()
                             }
                             else {
@@ -131,6 +131,7 @@ class LoginActivity :AppCompatActivity() {
     private fun signInWithGoogle() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
+
     }
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -161,7 +162,7 @@ class LoginActivity :AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
                     Toast.makeText(this, "Welcome, ${user?.displayName}", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, HomeActivity::class.java))
+                    startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 } else {
                     // If sign in fails, display a message to the user.
@@ -169,6 +170,4 @@ class LoginActivity :AppCompatActivity() {
                 }
             }
         }
-
-
 }

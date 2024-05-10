@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserdataActivity">
+
+    <ImageView
+        android:id="@+id/arrow_back"
+        android:layout_width="31dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="36dp"
+        android:clickable="true"
+        android:src="@drawable/arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@+id/personaldata"
+        app:layout_constraintEnd_toStartOf="@+id/personaldata"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/personaldata"
+        android:layout_width="150dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/sulphurpoint_bold"
+        android:gravity="center_vertical"
+        android:text="@string/personal_data"
+        android:textAlignment="gravity"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="313dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/personal_data_frame"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/personaldata">
+
+
+        <TextView
+            android:id="@+id/labelname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/calibri_bold"
+            android:text="@string/name" />
+
+        <EditText
+            android:id="@+id/name_input"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@drawable/personal_data_menu_frame"
+            android:ems="10"
+            android:fontFamily="@font/calibri_regular"
+            android:inputType="text"
+            android:paddingHorizontal="8dp"
+            android:text="@string/name"
+            />
+
+        <TextView
+            android:id="@+id/labelemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/calibri_bold"
+            android:text="@string/email_address" />
+
+        <EditText
+            android:id="@+id/email_input"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@drawable/personal_data_menu_frame"
+            android:ems="10"
+            android:fontFamily="@font/calibri_regular"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="8dp"
+            android:text="@string/email_address"
+            />
+
+        <TextView
+            android:id="@+id/labelphone"
+            android:layout_width="236dp"
+            android:layout_height="18dp"
+            android:fontFamily="@font/calibri_bold"
+            android:text="@string/phone_number" />
+
+        <EditText
+            android:id="@+id/phone_input"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@drawable/personal_data_menu_frame"
+            android:ems="10"
+            android:fontFamily="@font/calibri_regular"
+            android:inputType="phone"
+            android:paddingHorizontal="8dp"
+            android:text="@string/phone_number"
+            />
+    </LinearLayout>
+
+<!--    <Button-->
+<!--        android:id="@+id/editbtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="28dp"-->
+<!--        android:background="@drawable/btn_bg"-->
+<!--        android:fontFamily="@font/calibri_bold"-->
+<!--        android:text="@string/edit"-->
+<!--        android:textSize="24sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
