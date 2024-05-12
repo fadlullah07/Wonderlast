@@ -28,6 +28,7 @@ class PhoneActivity:AppCompatActivity() {
     private lateinit var inputOtp : EditText
     private lateinit var sendOtpBtn : TextView
     private lateinit var confirmBtn : Button
+    private lateinit var logOutBtn : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +39,12 @@ class PhoneActivity:AppCompatActivity() {
         inputOtp = findViewById(R.id.input_otp)
         sendOtpBtn = findViewById(R.id.send_otp)
         confirmBtn = findViewById(R.id.confirm_button)
-        val user = FirebaseAuth.getInstance().currentUser
+        logOutBtn = findViewById(R.id.logout)
 
+        logOutBtn.setOnClickListener {
+            logout()
+        }
+        val user = FirebaseAuth.getInstance().currentUser
 
         sendOtpBtn.setOnClickListener {
             auth.setLanguageCode("id")
@@ -129,6 +134,14 @@ class PhoneActivity:AppCompatActivity() {
                 }
             }
     }
+        private fun logout() {
+            auth.signOut()
+            Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
+
+            // Arahkan ke halaman login
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
 
 
 }

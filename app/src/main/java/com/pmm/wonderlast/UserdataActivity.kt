@@ -1,13 +1,9 @@
 package com.pmm.wonderlast
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.app.ActivityOptionsCompat
 import com.google.firebase.auth.FirebaseAuth
 
 class UserdataActivity : AppCompatActivity() {
@@ -16,7 +12,7 @@ class UserdataActivity : AppCompatActivity() {
     private lateinit var nameInput : EditText
     private lateinit var emailInput : EditText
     private lateinit var phoneInput : EditText
-    private lateinit var ediBtn : Button
+//    private lateinit var ediBtn : Button
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,14 +20,7 @@ class UserdataActivity : AppCompatActivity() {
         setContentView(R.layout.userdata_activity)
         backBtn = findViewById(R.id.arrow_back)
         backBtn.setOnClickListener{
-            intent = Intent(this, ProfileActivity::class.java)
-            val options = ActivityOptionsCompat.makeCustomAnimation(
-                this,
-                R.anim.enter_animation_reverse,
-                R.anim.exit_animation_reverse
-            )
-            ActivityCompat.startActivity(this, intent , options.toBundle())
-            finish()
+            onBackPressedDispatcher.onBackPressed()
         }
         nameInput = findViewById(R.id.name_input)
         emailInput = findViewById(R.id.email_input)

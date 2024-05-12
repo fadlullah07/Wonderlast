@@ -20,7 +20,7 @@ class WelcomeActivity : AppCompatActivity() {
     private lateinit var sliderAdapter: SliderAdapter
     private val NUM_PAGES = 5 // Jumlah halaman slider
     private val images = listOf(
-        R.drawable.placeholder_image,
+        R.drawable.image_slider1,
         R.drawable.image_slider2,
         R.drawable.image_slider3,
         R.drawable.image_slider4,
@@ -45,7 +45,9 @@ class WelcomeActivity : AppCompatActivity() {
             } else {
                 currentPage++
             }
-            viewPager.setCurrentItem(currentPage, true)
+            runOnUiThread {
+                viewPager.setCurrentItem(currentPage, true)
+            }
             handler.postDelayed(this, delay)
         }
     }

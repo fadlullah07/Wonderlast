@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
                 // Email sudah diverifikasi, cek nomor telepon terhubung
                 if (user.phoneNumber != "") {
                     // Nomor telepon sudah terhubung
-                    startActivity(Intent(this, ProfileActivity::class.java))
+                    startActivity(Intent(this, HomeActivity::class.java))
                     finish()
                 } else {
                     // Nomor telepon belum terhubung
@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
+        }else{
+            startActivity(Intent(this, WelcomeActivity::class.java))
+            finish()
         }
     }
 }
