@@ -28,7 +28,7 @@ class HomeActivity : AppCompatActivity(){
 
                 R.id.navigation_mark -> {
                     // Ganti fragment dengan HomeFragment
-                    replaceFragment(MyFragment())
+                    replaceFragment(MarkFragment())
                     item.setIcon(R.drawable.bookmark_icon_active)
                     bottomNavigationView.menu.findItem(R.id.navigation_home).setIcon(R.drawable.home_icon)
                     bottomNavigationView.menu.findItem(R.id.navigation_plan).setIcon(R.drawable.plan_icon)
@@ -38,7 +38,7 @@ class HomeActivity : AppCompatActivity(){
 
                 R.id.navigation_plan -> {
                     // Ganti fragment dengan HomeFragment
-                    replaceFragment(MyFragment())
+                    replaceFragment(PlanFragment())
                     item.setIcon(R.drawable.plan_icon_active)
                     bottomNavigationView.menu.findItem(R.id.navigation_home).setIcon(R.drawable.home_icon)
                     bottomNavigationView.menu.findItem(R.id.navigation_mark).setIcon(R.drawable.bookmark_icon)

@@ -36,6 +36,7 @@ class UserdataActivity : AppCompatActivity() {
         if (currentUser != null) {
                 nameInput.setText(currentUser.displayName)
                 emailInput.setText(currentUser.email)
+                phoneInput.setText(currentUser.phoneNumber)
         }
 //        ediBtn.setOnClickListener {
 //            val builder = AlertDialog.Builder(this)
