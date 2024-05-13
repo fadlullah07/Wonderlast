@@ -36,8 +36,6 @@ class WelcomeActivity : AppCompatActivity() {
         handlerThread.start()
         handler = Handler(handlerThread.looper)
     }
-
-
     private val runnable = object : Runnable {
         override fun run() {
             if (currentPage == NUM_PAGES - 1) {
@@ -51,7 +49,6 @@ class WelcomeActivity : AppCompatActivity() {
             handler.postDelayed(this, delay)
         }
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.first_activity)
@@ -72,6 +69,7 @@ class WelcomeActivity : AppCompatActivity() {
                 R.anim.exit_animation
             )
             ActivityCompat.startActivity(this, intent, options.toBundle())
+            finish()
         }
 
         loginbtn.setOnClickListener {
@@ -82,6 +80,7 @@ class WelcomeActivity : AppCompatActivity() {
                 R.anim.exit_animation
             )
             ActivityCompat.startActivity(this, intent, options.toBundle())
+            finish()
         }
     }
 

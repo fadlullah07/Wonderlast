@@ -40,13 +40,8 @@ class ResetPassActivity: Activity() {
         }
         sendbtn.setOnClickListener{
             val emailAddress = emailinput.text.toString()
-            val user = auth.currentUser
             if (emailAddress.isEmpty()) {
                 Toast.makeText(this,"Please fill the fields",Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            if(user == null){
-                Toast.makeText(this,"Email is not registered",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             auth.sendPasswordResetEmail(emailAddress)

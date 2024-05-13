@@ -76,7 +76,7 @@ class LoginActivity :AppCompatActivity() {
                         }
 
                 }else{
-                        Toast.makeText(this,"${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"User Tidak ditemukan atau Password salah", Toast.LENGTH_SHORT).show()
                     }
             }
 
